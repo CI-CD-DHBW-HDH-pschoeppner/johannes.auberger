@@ -10,11 +10,18 @@
 
   let todos: TodoItem[];
 
+  let title = "Todo List";
+  let count = 0;
+
   todoList.subscribe((value) => {
     todos = value;
   });
 
   function submitHandler(event: SubmitEvent) {
+    count++;
+    if (count > 10) {
+      title = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+    }
     const data = new FormData(event.target as HTMLFormElement);
     for (let field of data) {
       const [, value] = field;
@@ -38,7 +45,7 @@
 </script>
 
 <main>
-  <h1>Todos:</h1>
+  <h1>{title}</h1>
   <TodoList {todos} />
   <progress
     max={todos.length}
