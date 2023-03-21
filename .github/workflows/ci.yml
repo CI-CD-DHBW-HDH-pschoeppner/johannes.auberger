@@ -1,0 +1,16 @@
+name: CI
+on: [push]
+jobs:
+  ci_pipe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: Install modules
+        run: npm ci
+      - name: Prettier format check
+        run: npm run format:check
+      - name: eslint check
+        run: npm run lint
+      - name: Unit Tests
+        run: npm run test
