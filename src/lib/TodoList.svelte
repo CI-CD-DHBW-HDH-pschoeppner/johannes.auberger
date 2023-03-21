@@ -8,7 +8,8 @@
     // TODO: es sollen nur die Items zurückgegeben werden, die den searchString (case insensitive) enthalten
     // Hier muss ein boolean zurückgegeben werden, der bestimmt, ob das Item (todo) angezeigt wird, oder nicht
     // DONE
-    if(todo.value.toLowerCase().includes(searchString.toLowerCase())) return true;
+    if (todo.value.toLowerCase().includes(searchString.toLowerCase()))
+      return true;
     return false;
   });
 
